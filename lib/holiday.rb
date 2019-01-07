@@ -59,6 +59,7 @@ def all_supplies_in_holidays(holiday_hash)
   def title_case(string)
     string.collect {|word| word.capitalize}
   end
+
   holiday_hash.each do |key, value|
     puts "#{key.capitalize}:"
       value.each do |key, value|
@@ -74,7 +75,7 @@ def all_supplies_in_holidays(holiday_hash)
             end
           end
         end
-        key = key.to_s.split('_')
+        key = title_case(key.to_s.split('_'))
 
         puts "  #{key.join(' ')}: #{supplies}"
       end
