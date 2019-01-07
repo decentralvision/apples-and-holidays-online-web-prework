@@ -57,7 +57,7 @@ def all_supplies_in_holidays(holiday_hash)
   #   Fourth Of July: Fireworks, BBQ
   # etc.
   def title_case(string)
-    string.collect {|word| word.capitalize}
+    new_string = string.collect {|word| word.capitalize}
   end
 
   holiday_hash.each do |key, value|
