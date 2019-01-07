@@ -64,14 +64,14 @@ def all_supplies_in_holidays(holiday_hash)
     puts "#{key.capitalize}:"
       value.each do |key, value|
         if value.length == 1
-          supplies = "#{title_case(value[0].split(' ')).join(' ')}"
+          supplies = "#{value[0].upcase == value[0] ? value[0] : title_case(value[0].split(' ')).join(' ')}"
         else
           supplies = ""
           value.each do |supply|
             if value[-1] == supply
-              supplies.concat(title_case(supply.split(' ')).join(' '))
+              supplies.concat(supply.upcase == supply ? supply : title_case(supply.split(' ')).join(' '))
             else
-              supplies.concat("#{title_case(supply.split(' ')).join(' ')}, ")
+              supplies.concat("#{supply.upcase == supply ? supply : title_case(supply.split(' ')).join(' ')}, ")
             end
           end
         end
