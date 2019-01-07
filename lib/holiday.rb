@@ -69,7 +69,7 @@ def all_supplies_in_holidays(holiday_hash)
           supplies = ""
           value.each do |supply|
             if value[-1] == supply
-              supplies.concat(supply.capitalize)
+              supplies.concat(title_case(supply.split(' ')).join(' '))
             else
               supplies.concat("#{title_case(supply.split(' ')).join(' ')}, ")
             end
