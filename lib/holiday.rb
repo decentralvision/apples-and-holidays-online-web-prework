@@ -64,7 +64,7 @@ def all_supplies_in_holidays(holiday_hash)
     puts "#{key.capitalize}:"
       value.each do |key, value|
         if value.length == 1
-          supplies = "#{value[0].capitalize}"
+          supplies = "#{title_case(value[0].split(' ')).join(' ')}"
         else
           supplies = ""
           value.each do |supply|
