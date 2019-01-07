@@ -71,7 +71,7 @@ def all_supplies_in_holidays(holiday_hash)
             if value[-1] == supply
               supplies.concat(supply.capitalize)
             else
-              supplies.concat("#{title_case(supply.split(' '))}, ")
+              supplies.concat("#{title_case(supply.split(' ')).join(' ')}, ")
             end
           end
         end
