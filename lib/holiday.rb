@@ -59,12 +59,15 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |key, value|
     puts "#{key.capitalize}:"
       value.each do |key, value|
-        value.length == 1 ? supplies = "#{value[0].capitalize}"
-        value.each do |supply|
-          if value[-1] == supply
-            supplies.concat(supply.capitalize)
-          else
-            supplies.concat("#{supply.capitalize}, ")
+        if value.length == 1
+          supplies = "#{value[0].capitalize}"
+        else 
+          value.each do |supply|
+            if value[-1] == supply
+              supplies.concat(supply.capitalize)
+            else
+              supplies.concat("#{supply.capitalize}, ")
+            end
           end
         end
         puts "#{key.capitalize}: #{supplies}}"
