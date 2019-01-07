@@ -60,9 +60,9 @@ def all_supplies_in_holidays(holiday_hash)
     puts "#{key.capitalize}:"
       value.each do |key, value|
         if value.length == 1
-          supplies = "  #{value[0].capitalize}"
+          supplies = "#{value[0].capitalize}"
         else
-          supplies = "  "
+          supplies = ""
           value.each do |supply|
             if value[-1] == supply
               supplies.concat(supply.capitalize)
